@@ -15,10 +15,7 @@ def load_model():
 
     model = ClassifierModelV1(input_shape=1,output_shape=1)
 
-    model.load_state_dict(
-        torch.load("models/MODEL_DFC.pth",map_location=device)
-    )
-
+    model.load_state_dict(torch.load("models/MODEL_DFC.pth",map_location=device))
     model.eval()
     return model
 
@@ -57,14 +54,7 @@ def predict(audio_file):
     with tempfile.NamedTemporaryFile(delete=False,suffix=".wav") as tmp:
         tmp.write(audio_file.getvalue())
         tmp.flush()
-        st.write(uploaded_file.type)
-        st.write(uploaded_file.name)
         temp_path = tmp.name
-        import os
-
-        print("Path:", temp_path)
-        print("Exists:", os.path.exists(temp_path))
-        print("Size:", os.path.getsize(temp_path))
 
         mel = gen_meldb(temp_path)
 
