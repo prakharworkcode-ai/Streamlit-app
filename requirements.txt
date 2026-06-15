@@ -8,3 +8,4 @@ soundfile
 streamlit
 matplotlib
 scipy
+soundfile
