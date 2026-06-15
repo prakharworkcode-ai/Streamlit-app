@@ -16,7 +16,7 @@ def load_model():
     model = ClassifierModelV1(input_shape=1,output_shape=1)
 
     model.load_state_dict(
-        torch.load("MODEL_DFC.pth",map_location=device)
+        torch.load("models/MODEL_DFC.pth",map_location=device)
     )
 
     model.eval()
