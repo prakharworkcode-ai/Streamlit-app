@@ -1,0 +1,10 @@
+torch==2.12.0
+numpy
+pandas
+librosa
+scikit-learn
+tqdm
+soundfile
+streamlit
+matplotlib
+scipy
